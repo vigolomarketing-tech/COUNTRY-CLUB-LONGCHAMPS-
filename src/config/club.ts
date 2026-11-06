@@ -1,0 +1,2 @@
+export const club = { name: 'Country Club Longchamps', address: 'Av. Hipólito Yrigoyen 17020, Longchamps, Buenos Aires', whatsapp: 'https://wa.me/5491151248150', instagram: 'https://www.instagram.com/countryclongchamps/', maps: 'https://www.google.com/maps/search/?api=1&query=Av.+Hip%C3%B3lito+Yrigoyen+17020+Longchamps', logo: null as string | null };
+export const asset = (name: string) => `${import.meta.env.BASE_URL}assets/${name}`;
