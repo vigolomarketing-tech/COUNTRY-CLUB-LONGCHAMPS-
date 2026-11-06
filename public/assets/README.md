@@ -12,4 +12,4 @@ Reemplazar conservando los nombres permite actualizar la demo sin editar compone
 
 Manrope se distribuye localmente en pesos 400–800 con SIL Open Font License, incluida en Manrope-LICENSE.txt. Fuente: Google Fonts / Manrope de Mikhail Sharanda.
 
-No se recibió el escudo oficial. No se creó ninguna imitación. Agregar escudo-oficial.png y configurar club.logo en src/config/club.ts mediante asset('escudo-oficial.png'). El favicon CL es tipográfico provisorio, no un escudo.
+El escudo oficial 3D está en `../images/country-club-logo.png`, con versiones optimizadas e iconos documentados en `../images/README.md`. La configuración compartida se encuentra en `src/config/club.ts`.

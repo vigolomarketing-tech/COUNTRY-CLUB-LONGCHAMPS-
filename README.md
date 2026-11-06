@@ -63,7 +63,7 @@ El calendario siempre usa `America/Argentina/Buenos_Aires`, independientemente d
 
 Reemplazar `public/assets/hero.jpg`, `football.jpg`, `tennis.jpg`, `padel.jpg` y `food.jpg` por fotografías oficiales autorizadas conservando esos nombres. La referencia genérica de raquetas fue reemplazada por una foto de pádel de SideSpin Padel con licencia Unsplash. Ver fuentes y licencias en `public/assets/README.md`. Manrope se incluye localmente con su licencia SIL.
 
-**El escudo oficial no estaba disponible.** No se dibujó ni imitó. Agregar `public/assets/escudo-oficial.png` y configurar `club.logo` con `asset('escudo-oficial.png')` en `src/config/club.ts`. La marca tipográfica y el favicon CL siguen siendo provisorios. Solo retirar las aclaraciones ilustrativas tras incorporar datos y assets oficiales.
+El escudo oficial 3D proporcionado por el cliente está integrado en el header y footer compartidos de inicio, reservas y administración. Archivo principal: `public/images/country-club-logo.png`; versiones proporcionales de 96, 192 y 256 px mediante `srcset`. El adjunto recibido fue un JPEG con fondo blanco, convertido a PNG conservando exactamente sus píxeles; no tiene transparencia. Favicon PNG de 32 px, favicon ICO, Apple Touch Icon de 180 px e iconos de accesos directos de 192/512 px, todos derivados del mismo escudo sin cambios de diseño. Ver `public/images/README.md`. Las fotografías siguen siendo ilustrativas.
 
 ## Diseño y SEO
 
