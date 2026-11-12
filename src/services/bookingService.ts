@@ -23,7 +23,7 @@ export const bookingService: BookingService = {
     if(!courts.some(c=>c.id===input.courtId)||!isValidDate(input.date)||![60,90,120].includes(input.duration)||!['reservado','bloqueado'].includes(input.status))throw new Error('Revisá los datos del turno.');
     if(!isFutureSlot(input.date,input.time))throw new Error('Ese horario ya pasó. Elegí un horario futuro (hora de Buenos Aires).');
     const slots=await this.getSlots(input.courtId,input.date,input.duration);
-    if(!slots.find(s=>s.time===input.time)?.available)throw new Error('Ese horario ya no está disponible en la demo. Elegí otro.');
+    if(!slots.find(s=>s.time===input.time)?.available)throw new Error('Ese horario ya no está disponible en esta demostración. Elegí otro.');
     const booking={...input,id:crypto.randomUUID()};changes.push(booking);return booking;
   }
 };
