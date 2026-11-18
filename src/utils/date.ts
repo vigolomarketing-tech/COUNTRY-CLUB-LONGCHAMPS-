@@ -14,3 +14,8 @@ export const isFutureSlot = (date: string,time: string,now = new Date()) => {
   return date>clock.date||(date===clock.date&&Number(time.slice(0,2))*60+Number(time.slice(3))>clock.minutes);
 };
 export const formatDate = (value: string) => new Date(value+'T12:00:00Z').toLocaleDateString('es-AR',{day:'numeric',month:'long',year:'numeric',timeZone:CLUB_TIME_ZONE});
+export const addDays = (value: string, n: number) => { const date = new Date(value + 'T12:00:00Z'); date.setUTCDate(date.getUTCDate() + n); return date.toISOString().slice(0, 10); };
+export const dayRange = (from: string, to: string) => { const days: string[] = []; for (let day = from; day <= to && days.length < 93; day = addDays(day, 1)) days.push(day); return days; };
+export const monthBounds = (value: string) => { const [y, m] = value.split('-').map(Number); const last = new Date(Date.UTC(y, m, 0)).getUTCDate(); const mm = String(m).padStart(2, '0'); return { from: `${y}-${mm}-01`, to: `${y}-${mm}-${String(last).padStart(2, '0')}` }; };
+export const weekBounds = (value: string) => { const dow = (new Date(value + 'T12:00:00Z').getUTCDay() + 6) % 7; const from = addDays(value, -dow); return { from, to: addDays(from, 6) }; };
+export const formatShort = (value: string) => new Date(value + 'T12:00:00Z').toLocaleDateString('es-AR', { day: '2-digit', month: '2-digit', timeZone: 'UTC' });

@@ -6,4 +6,4 @@ import {Home} from '../src/pages/Home';
 import {Reservations} from '../src/pages/Reservations';
 import {Admin} from '../src/pages/Admin';
 import {Layout} from '../src/components/Layout';
-export function verify(){for(const [path,Page,expected] of [['/',Home,'NOS'],['/reservas',Reservations,'SIMULADOR DE RESERVAS'],['/admin-demo',Admin,'PANEL DE DEMOSTRACIÓN']] as const){const html=renderToString(<MemoryRouter initialEntries={[path]}><Layout><Routes><Route path={path} element={<Page/>}/></Routes></Layout></MemoryRouter>);assert(html.includes(expected));assert(html.includes('Vigolo Web Studio'));console.log(`PASS ${path}: page and shared layout render`);}}
+export function verify(){for(const [path,Page,expected] of [['/',Home,'NOS'],['/reservas',Reservations,'SIMULADOR DE RESERVAS'],['/admin-demo',Admin,'Ingresá a tu panel']] as const){const html=renderToString(<MemoryRouter initialEntries={[path]}><Layout><Routes><Route path={path} element={<Page/>}/></Routes></Layout></MemoryRouter>);assert(html.includes(expected));assert(html.includes('Vigolo Web Studio'));console.log(`PASS ${path}: page and shared layout render`);}}

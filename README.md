@@ -28,8 +28,8 @@ En desarrollo y preview, abrir la URL indicada por Vite con el prefijo `/COUNTRY
 ## Rutas
 
 - `/#/`: inicio, deportes, galería, gastronomía, torneos y contacto.
-- `/#/reservas`: deporte, cancha, fecha, horario, duración, resumen y confirmación simulada.
-- `/#/admin-demo`: indicadores, agenda, tabla de turnos, filtros, detalles, creación de reservas y bloqueo de horarios.
+- `/#/reservas`: deporte, cancha, fecha, horario y duración, resumen con total y seña según las tarifas del panel, y confirmación simulada con enlace a la contabilidad (`/#/admin-demo?tab=contabilidad&from=AAAA-MM-DD&to=AAAA-MM-DD`).
+- `/#/admin-demo`: login de demostración (administracion@countryclub.demo / demo1234, ya cargado) y panel con 4 pestañas: **Agenda** (turnos, cliente, pago, bloqueos), **Contabilidad** (facturado, cobrado y por cobrar por período, por deporte y medio de pago, registro de alquileres, cobro de saldos y exportación a Excel/CSV), **Precios** (tarifas, horario pico, seña) y **Canchas** (nombre, foto, disponibilidad). Todo lo que se edita se guarda en el navegador (localStorage) y el botón "Restablecer demo" vuelve a los valores de ejemplo; no hay base de datos real.
 
 En Pages, el prefijo completo es `/COUNTRY-CLUB-LONGCHAMPS-/`. `HashRouter` permite abrir y recargar las tres rutas sin 404 del servidor. `vite.config.ts` define exactamente `base: '/COUNTRY-CLUB-LONGCHAMPS-/'`. Las anclas de secciones se gestionan mediante React Router.
 
@@ -43,7 +43,7 @@ El despliegue no requiere secretos de aplicación ni credenciales en el código;
 
 ## Qué es simulado
 
-Todas las canchas, horarios, turnos, ocupación y eventos son ficticios y se identifican como tales. Las fotografías de referencia no representan las instalaciones reales. No se muestran precios oficiales. Los cambios se comparten en memoria entre reservas y administración durante la sesión y desaparecen al recargar. Ninguna confirmación envía mensajes, cobra ni genera una reserva real. Los enlaces de WhatsApp, Instagram y Maps se abren únicamente al pulsarlos.
+Todas las canchas, horarios, turnos, clientes, ocupación, precios, cobros y eventos son ficticios y se identifican como tales. Las tarifas (`rates` en `src/data/demo.ts`) y la seña del 30% son valores de ejemplo que el club definiría. Las fotografías de referencia no representan las instalaciones reales. Los cambios se comparten en memoria entre reservas y administración durante la sesión y desaparecen al recargar. Ninguna confirmación envía mensajes, cobra ni genera una reserva real. Los enlaces de WhatsApp, Instagram y Maps se abren únicamente al pulsarlos.
 
 ## Corrección de fechas y horarios
 
@@ -78,4 +78,4 @@ Title, descripción, Open Graph, canonical del dominio previsto y JSON-LD local 
 - `npm run check:routes`: render de las tres páginas con su layout compartido, sin abrir un servidor ni navegador.
 - Revisión de breakpoints para celulares/tablets/escritorio y ajustes de legibilidad, calendario, botones y tarjetas.
 
-La herramienta de navegador `cua_repl.js` no estaba disponible en el entorno gestionado. No confundir las verificaciones de render con pruebas visuales o interacciones completas en navegador: queda pendiente comprobar visualmente a 375, 768 y 1440 px, menú, modales, reserva completa y consola. La interfaz está preparada para esa revisión.
+Revisión en navegador (Chrome) a 375, 768, 1024, 1280 y 1440 px: sin desbordes horizontales, sin errores de consola, menú móvil, reserva completa de punta a punta, panel y modales verificados. Imagen social 1200×630 en `public/assets/og-image.jpg`; fuentes Manrope en woff2.

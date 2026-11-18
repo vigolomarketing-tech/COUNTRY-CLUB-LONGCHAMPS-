@@ -6,3 +6,5 @@ export const sports: {id: Sport; name: string; image: string; description: strin
 export const courts: Court[] = sports.flatMap(s=>[1,2].map(n=>({id:`${s.id}-${n}`,sport:s.id,name:`${s.name} · Cancha ${n}`,detail:'Cancha ilustrativa · configuración de demostración'})));
 export const hours = Array.from({length:14},(_,i)=>`${String(i+9).padStart(2,'0')}:00`);
 export const events = [{sport:'Fútbol',title:'Copa de amigos',text:'Un encuentro para compartir la pasión por el fútbol.',image:'football.jpg'},{sport:'Tenis',title:'Desafío de dobles',text:'Un formato pensado para disfrutar punto a punto.',image:'tennis.jpg'},{sport:'Padel',title:'Encuentro de padel',text:'El mejor plan se juega de a cuatro.',image:'padel.jpg'}];
+
+export const customers = ['Martín G.', 'Lucía P.', 'Los Halcones', 'Nicolás R.', 'Camila S.', 'Los Pibes FC', 'Federico A.', 'Julieta M.', 'Santiago B.', 'Romina D.', 'Club de los Jueves', 'Matías L.'];
